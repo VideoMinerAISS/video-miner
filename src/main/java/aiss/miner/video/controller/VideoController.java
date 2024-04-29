@@ -1,7 +1,7 @@
 package aiss.miner.video.controller;
 
-import aiss.miner.video.model.Caption;
-import aiss.miner.video.repository.CaptionRepository;
+import aiss.miner.video.model.Video;
+import aiss.miner.video.repository.VideoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,26 +14,26 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/videominer/captions")
-public class CaptionController {
+@RequestMapping("/videominer/videos")
+public class VideoController {
 
     @Autowired
-    CaptionRepository repository;
+    VideoRepository repository;
 
-    // GET /videominer/captions
+    // GET /videominer/videos
     @GetMapping
-    public List<Caption> findAll() {
+    public List<Video> findAll() {
         return repository.findAll();
     }
 
-    // GET /videominer/captions/:id
+    // GET /videominer/videos/:id
     @GetMapping("/{id}")
-    public Caption findById(@PathVariable String id) {
-        Optional<Caption> caption =  repository.findById(id);
-        if (caption.isEmpty()) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, String.format("caption with id %s not found", id));
+    public Video findById(@PathVariable String id) {
+        Optional<Video> video =  repository.findById(id);
+        if (video.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, String.format("video with id %s not found", id));
         }
 
-        return caption.get();
+        return video.get();
     }
 }
