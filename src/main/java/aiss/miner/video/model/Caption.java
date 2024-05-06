@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * @author Juan C. Alonso
@@ -13,13 +14,16 @@ import jakarta.persistence.Table;
 public class Caption {
 
     @Id
+    @NotNull
     @JsonProperty("id")
     private String id;
 
     @JsonProperty("name")
+    @NotNull
     private String name;
 
     @JsonProperty("language")
+    @NotNull
     private String language;
 
 

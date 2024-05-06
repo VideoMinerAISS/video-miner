@@ -16,18 +16,22 @@ import java.util.List;
 public class Channel {
 
     @Id
+    @NotNull
     @JsonProperty("id")
     private String id;
 
     @JsonProperty("name")
+    @NotNull
     @NotEmpty(message = "Channel name cannot be empty")
     private String name;
 
     @JsonProperty("description")
+    @NotNull
     @Column(columnDefinition="TEXT")
     private String description;
 
     @JsonProperty("createdTime")
+    @NotNull
     @NotEmpty(message = "Channel creation time cannot be empty")
     private String createdTime;
 

@@ -2,6 +2,7 @@ package aiss.miner.video.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * @author Juan C. Alonso
@@ -22,12 +23,15 @@ public class User {
     private Long id;
 
     @JsonProperty("name")
+    @NotNull
     private String name;
 
     @JsonProperty("user_link")
+    @NotNull
     private String user_link;
 
     @JsonProperty("picture_link")
+    @NotNull
     private String picture_link;
 
     public Long getId() {

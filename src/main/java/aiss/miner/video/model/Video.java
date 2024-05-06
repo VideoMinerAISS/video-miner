@@ -15,6 +15,7 @@ import java.util.List;
 public class Video {
 
     @Id
+    @NotNull
     @JsonProperty("id")
     private String id;
 
@@ -23,6 +24,7 @@ public class Video {
     private String name;
 
     @JsonProperty("description")
+    @NotNull
     @Column(columnDefinition="TEXT")
     private String description;
 

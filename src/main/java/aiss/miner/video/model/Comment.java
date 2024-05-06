@@ -12,10 +12,12 @@ import jakarta.validation.constraints.NotNull;
 public class Comment {
 
     @Id
+    @NotNull
     @JsonProperty("id")
     private String id;
 
     @JsonProperty("text")
+    @NotNull
     @Column(columnDefinition="TEXT")
     private String text;
 
